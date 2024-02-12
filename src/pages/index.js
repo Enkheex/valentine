@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
-  const yesButtonSize = noCount * 20 + 16;
+  const yesButtonSize = noCount * 15 + 16;
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
@@ -29,30 +29,33 @@ export default function Page() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-slate-600">
-      <div className="max-w-lg w-full px-4">
+      <div className="max-w-lg w-full px-4 mb-14">
         {yesPressed ? (
           <>
-            <img src="https://media.tenor.com/8wMk5Kah4rUAAAAi/penguin-love.gif" alt="Penguin love" />
-            <div className="text-4xl font-bold my-4 text-center">AAAA yaayyy</div>
+            <img src="https://media.tenor.com/8wMk5Kah4rUAAAAi/penguin-love.gif" alt="Penguin love" className="h-48 mx-auto" />
+            <div className="text-3xl font-bold my-4 text-center">AAAA yaayyy</div>
           </>
         ) : (
           <>
-            <img className="h-[200px] mx-auto" src="https://media.tenor.com/-xLIJlTMVvIAAAAi/thinking-penguin.gif" alt="Thinking penguin" />
-            <h1 className="text-4xl my-4 text-center">Миний валентин болох уу?</h1>
+            <img src="https://media.tenor.com/-xLIJlTMVvIAAAAi/thinking-penguin.gif" alt="Thinking penguin" className="h-48 mx-auto" />
+            <h1 className="text-3xl my-4 text-center">Миний валентин болох уу?</h1>
             <div className="text-center">
               <button
-                className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4`}
+                className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4 `}
                 style={{ fontSize: yesButtonSize }}
                 onClick={() => setYesPressed(true)}
               >
                 Тэгье
               </button>
               <button onClick={handleNoClick} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                {noCount === 0 ? 'No' : getNoButtonText()}
+                {noCount === 0 ? 'Үгүй' : getNoButtonText()}
               </button>
             </div>
           </>
         )}
+      </div>
+      <div className="absolute top-0 left-0 font-bold text-gray-300 mt-4 ml-4">
+        <h1>Ирмүүн Мөнххүслэн-д зориулж хийв. 12/02/2023</h1>
       </div>
     </div>
   );

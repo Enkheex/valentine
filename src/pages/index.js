@@ -28,30 +28,32 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen  bg-slate-600">
-      {yesPressed ? (
-        <>
-          <img src="https://media.tenor.com/8wMk5Kah4rUAAAAi/penguin-love.gif" />
-          <div className="text-4xl font-bold my-4 text-center">AAAA yaayyy</div>
-        </>
-      ) : (
-        <>
-          <img className="h-[200px]" src="https://media.tenor.com/-xLIJlTMVvIAAAAi/thinking-penguin.gif" />
-          <h1 className="text-4xl my-4">Миний валентин болох уу?</h1>
-          <div>
-            <button
-              className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4`}
-              style={{ fontSize: yesButtonSize }}
-              onClick={() => setYesPressed(true)}
-            >
-              Тэгье
-            </button>
-            <button onClick={handleNoClick} className=" bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-              {noCount === 0 ? 'No' : getNoButtonText()}
-            </button>
-          </div>
-        </>
-      )}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-slate-600">
+      <div className="max-w-lg w-full px-4">
+        {yesPressed ? (
+          <>
+            <img src="https://media.tenor.com/8wMk5Kah4rUAAAAi/penguin-love.gif" alt="Penguin love" />
+            <div className="text-4xl font-bold my-4 text-center">AAAA yaayyy</div>
+          </>
+        ) : (
+          <>
+            <img className="h-[200px] mx-auto" src="https://media.tenor.com/-xLIJlTMVvIAAAAi/thinking-penguin.gif" alt="Thinking penguin" />
+            <h1 className="text-4xl my-4 text-center">Миний валентин болох уу?</h1>
+            <div className="text-center">
+              <button
+                className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4`}
+                style={{ fontSize: yesButtonSize }}
+                onClick={() => setYesPressed(true)}
+              >
+                Тэгье
+              </button>
+              <button onClick={handleNoClick} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                {noCount === 0 ? 'No' : getNoButtonText()}
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

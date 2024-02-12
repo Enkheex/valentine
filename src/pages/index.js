@@ -54,7 +54,7 @@ export default function Page() {
           </>
         )}
       </div>
-      <div className="absolute top-0 left-0 font-bold text-gray-300 mt-4 ml-4">
+      <div className="absolute top-0 left-0 font-medium text-gray-300 mt-4 ml-4">
         <h1>Ирмүүн Мөнххүслэн-д зориулж хийв. 12/02/2023</h1>
       </div>
     </div>
